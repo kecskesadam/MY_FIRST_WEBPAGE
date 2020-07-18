@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<HTML lang="hu">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kecskes_Adam">
+    <meta name="description" content="Green Garden Biokertészet weboldala">
+    <title>Green Garden</title>
+    <link rel="icon" type="image/png" href="kepek/favicon.png">
+
+    <script>
+        function szamol() {
+            var termekekara = 0;
+            var szallitas = 0;
+
+            var rburgonya = 180 * document.getElementById("burgonya").value;
+            var rcekla = 280 * document.getElementById("cekla").value;
+            var rhagyma = 150 * document.getElementById("hagyma").value;
+            var rkarfiol = 320 * document.getElementById("karfiol").value;
+
+            var rkigyouborka = 280 * document.getElementById("kigyouborka").value;
+            var rpaprika = 250 * document.getElementById("paprika").value;
+            var rparadicsom = 220 * document.getElementById("paradicsom").value;
+            var rsalata = 300 * document.getElementById("salata").value;
+
+            var rrepa = 180 * document.getElementById("repa").value;
+            var ruborka = 250 * document.getElementById("uborka").value;
+            var rcseresznye = 470 * document.getElementById("cseresznye").value;
+            var rjonathan = 190 * document.getElementById("jonathan").value;
+
+            var rkorte = 200 * document.getElementById("korte").value;
+            var roszibarack = 320 * document.getElementById("oszibarack").value;
+            var rsargabarack = 280 * document.getElementById("sargabarack").value;
+            var rszilva = 210 * document.getElementById("szilva").value;
+
+            var termekekara = rburgonya + rcekla + rhagyma + rkarfiol + rkigyouborka + rpaprika + rparadicsom + rsalata + rrepa + ruborka + rcseresznye + rjonathan + rkorte + roszibarack + rsargabarack + rszilva;
+
+            if (termekekara < 6000 && termekekara > 0) {
+                szallitas = 500;
+            }
+            else {
+                szallitas = 0;
+            }
+
+            document.getElementById("termekek").value = termekekara;
+            document.getElementById("szallitas").value = szallitas;
+            document.getElementById("osszeg").value = termekekara + szallitas;
+
+        }
+
+    </script>
+
+    <script src="validacio/jquery-3.4.1.min.js"></script>
+    <script src="validacio/jquery-validation-1.19.1/dist/jquery.validate.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myform").validate({
+                rules:
+                {
+                    nev: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    lakcim: "reuired",
+                    tel: {
+                        required: true,
+                        minlenght: 14
+                    },
+                },
+                massages:
+                {
+                    nev: "Add meg kérlek a neved.",
+                    email: "Adj meg kérlek egy valós e-mail címet",
+                    lakcim: "Add meg kérlek a címet a kiszállításhoz.",
+                    tel: {
+                        required: "Add meg kérlek a telefonszámod.",
+                        minlenght: "Kérlek a feltüntetett formátumban add meg a telefonszámod."
+                    },
+                },
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form action="http://szamtud.uni-corvinus.hu/~blang/receive.php" method="post" onSubmit="return ellenoriz()">
+        <div class="row">
+            <header class="col-12 col-t-12">
+                <p>Green Garden Biokertészet</p>
+            </header>
+        </div>
+        <div class="row">
+            <nav id="menu">
+                <ul>
+                    <li class="col-2-5 col-t-2-5"><a href="index.html">Rólunk</a></li>
+                    <li class="col-2-5 col-t-2-5"><a href="termekek.html">Termékeink</a></li>
+                    <li class="col-2-5 col-t-2-5"><a href="galeria.html">Képgaléria</a></li>
+                    <li class="col-2-5 col-t-2-5"><a class="active" href="register.html">Rendelés</a></li>
+                    <li class="col-2-5 col-t-2-5"><a href="kapcsolat.html">Kapcsolat</a></li>
+                </ul>
+        </div>
+
+        <div class="col-3 col-t-12">
+            <aside>
+                <h2>Hűségprogramunk</h2>
+                <p>Felhívjuk kedves ügyfeleink figyelmét, hogy elindításra került törzsvásárlói programunk.</p>
+                <p>A regisztrált vásárlóinknak lehtőségük van rendszeres házhozszállítás igénybevételére akár 6000 Ft
+                    értékű alatti vásárlás esetén is. Ezen felül időnként kizárólagos kedvezményekben, illetve ajándék
+                    termékekben részesülnek.</p>
+                <p>Ezen felül a regisztrált vásárlóknak lehetőségük adódik online rendelések leadására.</p>
+                <img src="kepek/kedvezmeny.jpg" alt="újrahsznosítás" class="club">
+
+            </aside>
+        </div>
+
+        <div class="row">
+            <div class="col-6 col-t-12">
+                <section class="register">
+                    <h2>Rendeljen és váljon törzsvásárlóvá!</h2>
+                    <table class="urlap">
+                        <tr>
+                            <td colspan="3">
+                                <h3>Elérhetőségek</h3>
+                                <label for="nev">
+                                    <p>Név:</p>
+                                    <p> <input class="textbox" type="text" id="nev" name="nev" size="30" required></p>
+                                </label>
+                                <label for="email">
+                                    <p>E-mail:</p>
+                                    <p> <input class="textbox" type="email" id="email" name="email" required size="30">
+                                    </p>
+                                </label>
+                                <label for="lakcim">
+                                    <p>Lakcím:</p>
+                                    <p> <input class="textbox" type="text" id="lakcim" name="lakcim" size="30" required></p>
+                                </label>
+                                <label for="tel">
+                                    <p>Telefonszám: (xx-xx-xxx-xxxx)</p>
+                                    <p> <input class="textbox" type="tel" id="tel" name="telefonszam"
+                                            pattern="[0-9]{2}-[0-9]{2}-[0-9]{3}-[0-9]{4}" required size="30"></p>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <p>Szeretne törzsvásárlóvá válni?</p>
+                                <p>
+                                    <label><input type="radio" name="torzsvasarlo" id="torzsvasarlo"
+                                            value="igen" required>Igen</label><br>
+                                    <label><input type="radio" name="torzsvasarlo" id="torzsvasarlo"
+                                            value="nem" required>Nem</label><br>
+                                </p>
+                                <p>Mely termékeink keltették fel az érdeklődését?</p>
+                                <p>
+                                    <label for="zoldseg"><input type="checkbox" name="zoldseg" id="zoldseg"
+                                            value="igen"> Zöldségek</label><br>
+                                    <label for="gyumolcs"><input type="checkbox" name="gyumolcs" id="gyumolcs"
+                                            value="igen"> Gyümölcsök</label><br>
+                                </p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3">
+                                <h3>Megrendelhető termékeink:</h3>
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3 class="tablefejlec">Termék</h3>
+                            </td>
+                            <td>
+                                <h3 class="tablefejlec">Ár</h3>
+                            </td>
+                            <td>
+                                <h3 class="tablefejlec">Mennyiség</h3>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Burgonya</td>
+                            <td>180 Ft / kg</td>
+                            <td><label><input type="number" id="burgonya" name="burgonya(kg)" min="0" max="100"
+                                        value="0" step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Cékla</td>
+                            <td>280 Ft / kg</td>
+                            <td><label><input type="number" id="cekla" name="cekla(kg)" min="0" max="100" value="0"
+                                        step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Hagyma</td>
+                            <td>150 Ft / kg</td>
+                            <td><label><input type="number" id="hagyma" name="hagyma(kg)" min="0" max="100" value="0"
+                                        step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Karfiol</td>
+                            <td>320 Ft / db</td>
+                            <td><label><input type="number" id="karfiol" name="karfiol(db)" min="0" max="100" value="0"
+                                        step="1" size="50"> darab</label></td>
+                        </tr>
+                        <tr>
+                            <td>Kígyóuborka</td>
+                            <td>280 Ft / db</td>
+                            <td><label><input type="number" id="kigyouborka" name="kigyouborka(db)" min="0" max="100"
+                                        value="0" step="1" size="50"> darab</label></td>
+                        </tr>
+                        <tr>
+                            <td>Paprika</td>
+                            <td>250 Ft / kg</td>
+                            <td><label><input type="number" id="paprika" name="paprika(kg)" min="0" max="100" value="0"
+                                        step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Paradicsom</td>
+                            <td>220 Ft / kg</td>
+                            <td><label><input type="number" id="paradicsom" name="paradicsom(kg)" min="0" max="100"
+                                        value="0" step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Saláta</td>
+                            <td>300 Ft / db</td>
+                            <td><label><input type="number" id="salata" name="salata(db)" min="0" max="100" value="0"
+                                        step="1" size="50"> darab</label></td>
+                        </tr>
+                        <tr>
+                            <td>Sárgarépa</td>
+                            <td>180 Ft / kg</td>
+                            <td><label><input type="number" id="repa" name="repa(kg)" min="0" max="100" value="0"
+                                        step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Uborka</td>
+                            <td>250 Ft / kg</td>
+                            <td><label><input type="number" id="uborka" name="uborka(kg)" min="0" max="100" value="0"
+                                        step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Cseresznye</td>
+                            <td>470 Ft / kg</td>
+                            <td><label><input type="number" id="cseresznye" name="cseresznye(kg)" min="0" max="100"
+                                        value="0" step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Jonathan alma</td>
+                            <td>190 Ft / kg</td>
+                            <td><label><input type="number" id="jonathan" name="jonathan(kg)" min="0" max="100"
+                                        value="0" step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Körte</td>
+                            <td>200 Ft / kg</td>
+                            <td><label><input type="number" id="korte" name="korte(kg)" min="0" max="100" value="0"
+                                        step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Őszibarack</td>
+                            <td>320 Ft / kg</td>
+                            <td><label><input type="number" id="oszibarack" name="oszibarack(kg)" min="0" max="100"
+                                        value="0" step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Sárgabarack</td>
+                            <td>280 Ft / kg</td>
+                            <td><label><input type="number" id="sargabarack" name="sargabarack(kg)" min="0" max="100"
+                                        value="0" step="0.5" size="50"> kg</label></td>
+                        </tr>
+                        <tr>
+                            <td>Szilva</td>
+                            <td>210 Ft / kg</td>
+                            <td><label><input type="number" id="szilva" name="szilva(kg)" min="0" max="100" value="0"
+                                        step="0.5" size="50"> kg</label></td>
+                        </tr>
+
+                        <tr class="vegosszeg">
+                            <td>
+                                <br>
+                                <p>Termékek értéke:</p>
+                                <p>Szállítás díja:</p>
+                                <p>Fizetendő összeg:</p>
+                                <input class="button" type="button" value="Számol" onclick="szamol()">
+                            </td>
+                            <td colspan="2">
+                                <p><input class="textbox" type="text" id="termekek" name="termekek" size="5"> Ft</p>
+
+                                <p><input class="textbox" type="text" id="szallitas" name="szallitas" size="5"> Ft</p>
+
+                                <p><input class="textbox" type="text" id="osszeg" name="osszeg" size="5"> Ft</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <input class="button" type="submit" value="Rendelés leadása">
+                                <input class="button" type="reset" value="Rendelés törlése">
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+
+            <div class="col-3 col-t-12">
+                <aside>
+                    <h1>Házhozszállítás</h1>
+                    <p>Felhívjuk kedves vásárlóink figyelmét, hogy megyénkben a termékeink házhozszállítását is
+                        vállaljuk az üzlethelységünk nyitvatartásával megegyező időben. A
+                        rendelések leadására mind online, mind telefonhívás útján van lehetőség.</p>
+                    <p>6000 Ft feletti értékű vásárlás esetén a kiszállítás ingyenes.</p>
+                    <p>6000 Ft alatti vásárlás esetén a kiszállítás díja 500Ft.</p>
+                    <img src="kepek/delivery.gif" alt="újrahsznosítás" class="recycle">
+                </aside>
+            </div>
+
+            <div class="col-3 col-t-12">
+                <aside class="korlat">
+                    <h1>Rendelési korlát</h1>
+                    <p>Weboldalunkon az egyes termékekből legfeljebb 100 egységnyi rendelhető. Ennél nagyobb mennyiség
+                        megrendelése csupán egyéni egyeztetéssel, telefonhívás útján lehetséges.</p>
+                    <p>Köszönjük megértésüket!</p>
+
+                </aside>
+            </div>
+
+
+            <div class="row">
+                <footer class="col-12 col-t-12">
+                    <p>Az oldal nem prezentál valós vállalatot, csupán képzési célokat szolgál.</p>
+                </footer>
+    </form>
+</body>
+
+</HTML>

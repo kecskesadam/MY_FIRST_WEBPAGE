@@ -1,0 +1,14 @@
+Oldal készítője: Kecskés Ádám
+
+Weboldal témája: Oldal egy fiktív zöldésget és gyümölcsöt termesztő kertészet weboldalát hivatott reprezentálni. Célja a kertészet működési formájának ismertetése és termékeinek népszerűsítése, valamint megrendelések felvétele.
+
+Egyedi betűtípus(Lobster-regular) helye: header
+
+Űrlap, jQuery, javascript program helye:
+weboldalon: "Rendelés" lapfül
+kódban: register.html
+
+Űrlapelemek: textbox,radio,button, reset, submit
+HTML 5 űrlapelemek: email, tel, number
+
+Javascript program: Elsősorban rendelés értékének kiszámolását hivatott elvégezni. Ezen felül a szállítás költségét is meghatározza.

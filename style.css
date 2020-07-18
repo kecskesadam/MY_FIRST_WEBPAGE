@@ -1,0 +1,260 @@
+*{box-sizing: border-box;}
+
+@font-face{font-family: oldalcim;
+src: url(betutipusok/Lobster-regular.ttf);}
+
+html
+{
+    padding: 0px;
+    margin: 0px;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+}
+
+table,td,tr{
+    border-collapse: collapse;
+    border:solid;
+    border-width: 0.5px;
+    border-color: white;
+    padding:16px;
+}
+
+body
+{
+    padding: 0px;
+    margin:0px;
+    background-image: url("kepek/hatter.jpg");
+    filter: brightness(110%);
+    background-blend-mode: lighten;
+    background-position: center center;
+    background-repeat: repeat;    
+    background-attachment: fixed;
+}
+
+header
+{
+    background-color: rgba(21, 147, 38, 0.7);
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 3em;
+    font-family: oldalcim;
+    text-align: center;
+}
+
+footer
+{
+    background-color:  rgba(21, 147, 38, 0.7);
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-size: 1.1em;
+    text-align: center;
+    color:rgb(255,255,255);
+}
+
+nav ul
+{
+list-style-type: none;
+padding: 0px;
+margin:0px;
+}
+
+nav li a
+{
+display: block;
+color:  rgb(255, 255, 255);
+background-color: rgba(21, 147, 38, 1);
+text-align: center;
+text-decoration: none;
+border-style: solid;
+border-color: rgb(255, 255, 255);
+padding: 5%;
+margin:auto;
+}
+
+a.active
+{
+background-color: rgb(255, 255, 255);;
+color: rgba(21, 147, 38, 1);
+border-color: rgba(47, 162,62,1);
+}
+
+nav li a:hover
+{
+    background-color: rgba(47, 162,62,1);
+    color:  rgb(255, 255, 255);
+    border-color: rgba(47, 162,62,1);
+}
+
+article
+{
+    /* faltol-falig ir */
+    text-align: justify;
+    background-color:  rgba(21, 147, 38, 0.7);
+    padding-left: 2%;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    padding-top: 1px;
+    margin-top: 1px;
+}
+
+.register
+{
+    background-color:  rgba(21, 147, 38, 0.7);
+    padding-left: 2%;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    padding-top: 1px;
+    margin-top: 1px;
+}
+
+aside
+{
+    /* text-align: justify; */
+    background-color:  rgba(179, 168, 25, 0.7);
+    padding-left: 5%;
+    padding-bottom: 1%;
+    padding-right: 5%;
+    padding-top: 1px;
+    margin-top: 1px;
+}
+
+img
+{
+max-width: 100%;
+}
+
+.kinalat
+{
+background-color: rgba(21, 147, 38, 0.7);
+font-size: 1.3em;
+padding: 1.5px;
+text-align: center;
+}
+
+table.termek td
+{
+    padding: 2%;
+    width: 20%;
+    border-collapse: collapse;
+}
+
+table.termek img 
+{
+    float: right;
+    width: 250px;
+    height: 190px;
+    padding: auto;
+    margin-left:20px;
+}
+
+table.termek img:hover
+{
+transform: scale(1.3);
+transition: 2s;
+}
+
+figure
+{
+margin:3px;
+padding: 3%;
+text-align: center;
+}
+
+.nyitvatartas, .kapcsolat, .facebook
+{
+    margin-top:23px;
+}
+
+.galleria-container
+{
+margin:auto;
+max-width: 100%;height: auto;
+}
+
+.kepgaleria
+{
+    padding:0px;
+}
+
+.kiemel
+{
+    color:blue;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.club
+{
+    padding-left: 20%;
+}
+
+.urlap
+{
+    margin:auto;
+}
+
+.tablefejlec
+{
+text-decoration: underline;
+text-align: center;
+}
+
+.korlat
+{
+    background-color: rgba(188, 16, 16, 0.5);
+}
+
+.button
+{
+    font-size: 0.8em;
+    text-align: center;
+    margin-left: 10%;
+}
+
+label.error {
+    color: #FB3A3A;
+}
+
+
+[class*="col-"] { /*mobile first*/
+    float: left;
+    padding: 15px;
+    width: 100%;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+@media only screen and (min-width: 600px) {
+    /* tablet */
+    .col-t-1 {width: 8.33%;}
+    .col-t-2 {width: 16.66%;}
+    .col-t-2-5 {width: 20%;}
+    .col-t-3 {width: 25%;}
+    .col-t-4 {width: 33.33%;}
+    .col-t-5 {width: 41.66%;}
+    .col-t-6 {width: 50%;}
+    .col-t-7 {width: 58.33%;}
+    .col-t-8 {width: 66.66%;}
+    .col-t-9 {width: 75%;}
+    .col-t-10 {width: 83.33%;}
+    .col-t-11 {width: 91.66%;}
+    .col-t-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* számítógép */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-2-5 {width: 20%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
